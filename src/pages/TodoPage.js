@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TodoItem from "../components/TodoItem";
 
 function TodoPage() {
   const [todos, setTodos] = useState([]);
@@ -19,6 +20,21 @@ function TodoPage() {
 
     setTodos([...todos, todo]);
     setNewTodo("");
+  }
+
+  function toggleTodo(id) {
+    const updatedTodos = todos.map(function (todo) {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed,
+        };
+      }
+
+      return todo;
+    });
+
+    setTodos(updatedTodos);
   }
 
   return (
@@ -49,7 +65,9 @@ function TodoPage() {
           <p>No tasks yet.</p>
         ) : (
           todos.map(function (todo) {
-            return <p key={todo.id}>{todo.text}</p>;
+            return (
+              <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo} />
+            );
           })
         )}
       </div>
