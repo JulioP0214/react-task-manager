@@ -19,3 +19,22 @@
   color: white;
   text-decoration: none;
 }
+
+.todo-page {
+  width: 80%;
+  margin: 30px auto;
+}
+
+.todo-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
