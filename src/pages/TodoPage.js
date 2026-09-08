@@ -4,6 +4,7 @@ import TodoItem from "../components/TodoItem";
 function TodoPage() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
+  const [filter, setFilter] = useState("all");
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -45,6 +46,18 @@ function TodoPage() {
     setTodos(updatedTodos);
   }
 
+  const filteredTodos = todos.filter(function (todo) {
+    if (filter === "completed") {
+      return todo.completed;
+    }
+
+    if (filter === "incomplete") {
+      return !todo.completed;
+    }
+
+    return true;
+  });
+
   return (
     <section className="todo-page">
       <h1>My Todo List</h1>
@@ -63,16 +76,16 @@ function TodoPage() {
       </form>
 
       <div className="todo-filters">
-        <button>All</button>
-        <button>Completed</button>
-        <button>Incomplete</button>
+        <button onClick={() => setFilter("all")}>All</button>
+        <button onClick={() => setFilter("completed")}>Completed</button>
+        <button onClick={() => setFilter("incomplete")}>Incomplete</button>
       </div>
 
       <div className="todo-list">
-        {todos.length === 0 ? (
+        {filteredTodos.length === 0 ? (
           <p>No tasks yet.</p>
         ) : (
-          todos.map(function (todo) {
+          filteredTodos.map(function (todo) {
             return (
               <TodoItem
                 key={todo.id}
