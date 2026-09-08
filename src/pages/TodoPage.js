@@ -37,6 +37,14 @@ function TodoPage() {
     setTodos(updatedTodos);
   }
 
+  function deleteTodo(id) {
+    const updatedTodos = todos.filter(function (todo) {
+      return todo.id !== id;
+    });
+
+    setTodos(updatedTodos);
+  }
+
   return (
     <section className="todo-page">
       <h1>My Todo List</h1>
@@ -66,7 +74,12 @@ function TodoPage() {
         ) : (
           todos.map(function (todo) {
             return (
-              <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo} />
+              <TodoItem
+                key={todo.id}
+                todo={todo}
+                toggleTodo={toggleTodo}
+                deleteTodo={deleteTodo}
+              />
             );
           })
         )}

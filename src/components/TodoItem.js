@@ -1,4 +1,4 @@
-function TodoItem({ todo, toggleTodo }) {
+function TodoItem({ todo, toggleTodo, deleteTodo }) {
   return (
     <div className="todo-item">
       <span
@@ -9,6 +9,13 @@ function TodoItem({ todo, toggleTodo }) {
       >
         {todo.text}
       </span>
+      <button
+        onClick={function () {
+          deleteTodo(todo.id);
+        }}
+      >
+        Delete
+      </button>
     </div>
   );
 }
