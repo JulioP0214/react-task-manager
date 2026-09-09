@@ -1,15 +1,21 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import TodoPage from "./pages/TodoPage";
+import ContactPage from "./pages/ContactPage";
+
 function App() {
   return (
-    <div className="App">
-      <Navbar />
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
 
-      <main>
-        <TodoPage />
-      </main>
-    </div>
+        <Routes>
+          <Route path="/todos" element={<TodoPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
