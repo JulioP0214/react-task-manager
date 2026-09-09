@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import TodoPage from "./pages/TodoPage";
 import ContactPage from "./pages/ContactPage";
@@ -11,6 +11,7 @@ function App() {
         <Navbar />
 
         <Routes>
+          <Route path="/" element={<Navigate to="/todos" />} />
           <Route path="/todos" element={<TodoPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
