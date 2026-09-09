@@ -1,0 +1,14 @@
+[33mc916938[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m updates project readme
+[33mb978440[m adds project planning document
+[33m7103bb5[m improves todo item layout
+[33ma3a786d[m adds default todo route
+[33m9fdecd0[m adds routing for todo and contact pages
+[33mc2ef00e[m adds controlled contact form
+[33m6f16b6c[m adds todo filter functionality
+[33mfd6ce23[m adds delete todo functionality
+[33mb25d927[m adds completed task functionality
+[33m436313b[m adds todo state and add task functionality
+[33m550876e[m adds todo page structure
+[33m400a136[m adds navigation bar
+[33mb93fb47[m sets up react application
+[33m2f0ad17[m Initial commit
