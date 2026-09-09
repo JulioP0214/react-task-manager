@@ -52,3 +52,27 @@
   text-decoration: line-through;
   color: gray;
 }
+
+.contact-page {
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin-top: 5px;
+}
